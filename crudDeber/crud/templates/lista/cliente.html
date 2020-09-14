@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+		
+	<table   border-collapse=separate border="2" WIDTH="900" HEIGHT="50" bordercolor="#D933FF" >
+		<thead >
+			<br>
+			<tr>
+
+
+				<th >Nombre </th> 
+				<th >Apellido</th>	
+				<th >Cedula</th>	
+				<th >Direccion</th>
+				<th >telefono</th>
+				<th >accion</th>
+
+				
+			</tr>
+		</thead>
+		<tbody>
+		
+			{% if clientes %}
+			{% for cliente in clientes %}
+				<tr>
+					<td>{{ cliente.nombre }}</td>
+					<td>{{ cliente.apellido }}</td>
+					<td>{{ cliente.cedula }}</td>
+					<td>{{ cliente.direccion }}</td>
+					<td>{{ cliente.telefono }}</td>
+					<td>
+						<a  href="{% url 'actualizar-cliente' cliente.id%}">Editar</a>
+
+						<a  href="{% url 'eliminar-cliente' cliente.id%}">Eliminar</a>
+				</table>		
+					</td>
+				</tr>
+			{% endfor %}
+			{% else %}
+				<h1>No hay Cliente</h1>
+			{% endif %}
+			</table>
+		</tbody>
+	</table>
+	
+
+	
+{% endblock %}

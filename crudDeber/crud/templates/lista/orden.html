@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <table >
+   
+
+		<thead >
+			<tr>
+				<th >cliente</th>
+				<th >producto</th>
+				<th >precio</th>	
+				<th >accion</th>	
+			</tr>
+		</thead>
+		<tbody>
+			{% if orden %}
+			{% for orde in orden %}
+				<tr>
+					<td>{{ orde.cliente }}</td>
+					<td>{{ orde.producto }}</td>
+					<td>{{ orde.cantidad }}</td>
+					<td>
+						<a  href="{% url 'actualizar-orden' orde.id%}">Editar</a>
+						<a  href="{% url 'eliminar-orden' orde.id%}">Eliminar</a>
+					</td>
+				</tr>
+			{% endfor %}
+			{% else %}
+				<h1>No hay ordenes</h1>
+			{% endif %}
+		</tbody>
+	</table>
+
+	
+{% endblock %}

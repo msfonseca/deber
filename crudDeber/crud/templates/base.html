@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+
+	<title> </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<table border-collapse=separate border="2" WIDTH="900" HEIGHT="50" >
+
+
+<body>
+	 <ul >
+        <tr>
+        <th><a href="{% url 'cliente' %}">cliente</a></th>
+       
+        <th><a href="{% url 'lista-producto' %}">lista producto</a></th>
+        <th><a href="{% url 'orden' %}">orden</a></th>
+        <th><a href="{% url 'lista-cliente' %}">lista cliente</a></th>
+        <th><a href="{% url 'lista-orden' %}">lista orden</a></th>
+       
+        </tr>
+    </ul>
+	{% block content %}
+	
+	{% endblock %}
+</body>
+</table>
+</html>

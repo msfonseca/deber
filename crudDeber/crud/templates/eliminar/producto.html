@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <h3>Deseas Eliminar el Producto  {{ productos.nombre }}</h3>
+    <input type="submit" value="Si, eliminar">
+</form>
+{% endblock %}
